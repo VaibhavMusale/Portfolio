@@ -122,17 +122,119 @@ themeButton.addEventListener('click', () => {
 })
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr =scrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration:'2500',
-    delay:'400',
-    reset:'true'
-})
+const ScrollRevealOption ={
+    distance :"50px",
+    origin:"bottom",
+    duration :1000,
+};
 
-sr.reveal('.home__perfil, .about__image, .contact__email',{origin:'right'});
-sr.reveal('.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data',{origin:'left'})
-sr.reveal('.services__card, .projects__card',{interval:100});
+ScrollReveal().reveal(".home__image",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 300,
+});
+
+ScrollReveal().reveal(".home__name ",{
+    ...ScrollRevealOption,
+    origin:"left",
+});
+
+ScrollReveal().reveal(".home__description",{
+    ...ScrollRevealOption,
+    origin:"left",
+    delay:100,
+});
+
+ScrollReveal().reveal(".insta",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".linkedin",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 550,
+});
+
+ScrollReveal().reveal(".github",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 600,
+});
+
+ScrollReveal().reveal(".about__perfil",{
+    ...ScrollRevealOption,
+    origin:"left",
+    delay: 400,
+});
+
+ScrollReveal().reveal(".about__list",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 100,
+});
+
+ScrollReveal().reveal("#uiux",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 100,
+});
+
+ScrollReveal().reveal("#webdesign",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 300,
+});
+
+ScrollReveal().reveal("#development",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 500,
+});
+
+ScrollReveal().reveal("#website",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 100,
+});
+
+ScrollReveal().reveal("#app",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 300,
+});
+
+ScrollReveal().reveal("#fast__food-app",{
+    ...ScrollRevealOption,
+    origin:"right",
+    delay: 500,
+});
+
+ScrollReveal().reveal(".contact__data",{
+    ...ScrollRevealOption,
+    origin:"left",
+    delay: 100,
+});
+
+ScrollReveal().reveal("#facebook",{
+    ...ScrollRevealOption,
+    origin:"bottom",
+    delay: 100,
+});
+
+ScrollReveal().reveal("#insta",{
+    ...ScrollRevealOption,
+    origin:"bottom",
+    delay: 300,
+});
+
+ScrollReveal().reveal("#linkedin",{
+    ...ScrollRevealOption,
+    origin:"bottom",
+    delay: 500,
+});
+
 
 
 
