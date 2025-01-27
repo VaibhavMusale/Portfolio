@@ -90,7 +90,6 @@ img{
     height: auto;
 }
 
-
 /* theme  */
 
 .nav__buttons {
@@ -232,6 +231,10 @@ body.dark-theme{
     transition: box-shadow .4s;
 }
 
+.high{
+    color: var(--first-color);
+}
+
 .nav{
     position: relative;
     height: var(--header-height);
@@ -335,7 +338,7 @@ body.dark-theme{
     content: "";
     width: 25%;
     height: 2px;
-    background-color: var(--white-color);
+    background-color: var( --first-color);
     position: absolute;
     left: 0;
     bottom: -0.5rem;
