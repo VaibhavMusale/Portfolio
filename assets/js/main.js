@@ -85,41 +85,45 @@ const scrollActive = () =>{
 			sectionsClass.classList.add('active-link')
 		}else{
 			sectionsClass.classList.remove('active-link')
-		}                                                    
+		}
 	})
 }
 window.addEventListener('scroll', scrollActive)
 
-/*=============== DARK LIGHT THEME ===============*/ 
+/*=============== DARK LIGHT THEME ===============*/
 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'ri-sun-line '
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'ri-sun-line';
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+// Previously selected theme (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+// Obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
 
-// We validate if the user previously chose a topic
+// Check if the user previously chose a theme
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme);
+} else {
+  // If no theme was selected, detect the system theme
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add(darkTheme);
+    themeButton.classList.add(iconTheme);
+  }
 }
 
-// Activate / deactivate the theme manually with the button
+// Activate/deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+  // Save the theme and the current icon that the user chose
+  localStorage.setItem('selected-theme', getCurrentTheme());
+  localStorage.setItem('selected-icon', getCurrentIcon());
+});
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const ScrollRevealOption ={
@@ -251,13 +255,13 @@ const   contactForm = document.getElementById("contact-form"),
 const sendEmail= (e) =>{
     e.preventDefault()
 
-    emailjs.sendForm('service_owchtjl','template_r7r18rj','#contact-form','JJvy-Ytxyl4WPkHyr')
+    emailjs.sendForm('service_4f6fhl9','template_lt7eut4','#contact-form','yxyMS91juolgl43hB')
     .then(()=>{
         //Show sent message
         contactMessage.textContent = "Message Sent Successfully✅ "
 
-        //Remove Message After five seconds 
-        setTimeout.textContent = ""
+        //Remove Message After five seconds
+        setTimeout.textContent = "" 
     } , 5000)
 
     contactForm.reset()
@@ -265,14 +269,5 @@ const sendEmail= (e) =>{
     contactMessage.textContent='Message not sent (service Error)'
 }
 
-contactForm.addEventListener('submit', sendEmail);
-
-
-
-
-
-
-
-
-
+contactForm.addEventListener('submit', sendEmail)
 
